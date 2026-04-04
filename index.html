@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東宝堂｜沖縄国際通りのお土産屋 - 愛されて半世紀</title>
+<meta name="description" content="沖縄・那覇国際通りにある老舗お土産屋「東宝堂」。創業1969年。ちんすこう、紅芋タルト、シーサー、琉球ガラス、泡盛など沖縄土産が勢揃い。全国発送OK。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --primary: #E8421E;
+  --primary-dark: #C4361A;
+  --yellow: #FFE500;
+  --yellow-light: #FFFEC6;
+  --orange: #F5911E;
+  --cream: #FFF9F0;
+  --white: #FFFFFF;
+  --text: #2D2017;
+  --text-light: #6B5B4E;
+  --border: #E8DDD3;
+  --shadow: rgba(45, 32, 23, 0.08);
+  --radius: 12px;
+  --max-w: 1100px;
+  --font-main: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body { font-family: var(--font-main); color: var(--text); background: var(--white); line-height: 1.8; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ===== HEADER ===== */
+.th-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: all 0.3s;
+}
+.th-header-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; height: 68px;
+}
+.th-logo img { height: 44px; width: auto; }
+.th-nav { display: flex; gap: 28px; align-items: center; }
+.th-nav a {
+  font-size: 14px; font-weight: 500; color: var(--text);
+  position: relative; transition: color 0.2s;
+}
+.th-nav a:hover { color: var(--primary); }
+.th-nav a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--primary); transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.th-nav a:hover::after { transform: scaleX(1); }
+.th-hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 32px; height: 32px; position: relative;
+}
+.th-hamburger span {
+  display: block; width: 24px; height: 2px; background: var(--text);
+  position: absolute; left: 4px; transition: all 0.3s;
+}
+.th-hamburger span:nth-child(1) { top: 8px; }
+.th-hamburger span:nth-child(2) { top: 15px; }
+.th-hamburger span:nth-child(3) { top: 22px; }
+.th-hamburger.active span:nth-child(1) { top: 15px; transform: rotate(45deg); }
+.th-hamburger.active span:nth-child(2) { opacity: 0; }
+.th-hamburger.active span:nth-child(3) { top: 15px; transform: rotate(-45deg); }
+.th-mobile-nav {
+  display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.98); z-index: 999;
+  flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+}
+.th-mobile-nav.active { display: flex; }
+.th-mobile-nav a { font-size: 18px; font-weight: 500; }
+
+/* ===== HERO ===== */
+.th-hero {
+  margin-top: 68px; position: relative; overflow: hidden;
+  height: 520px; display: flex; align-items: center; justify-content: center;
+}
+.th-hero-bg {
+  position: absolute; inset: 0;
+  background: url('images/home-cover_202406.png') center/cover no-repeat;
+}
+.th-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(232,66,30,0.75), rgba(245,145,30,0.7));
+}
+.th-hero-content {
+  position: relative; z-index: 2; text-align: center; color: var(--white);
+  padding: 0 24px;
+}
+.th-hero-content h1 {
+  font-size: 42px; font-weight: 700; line-height: 1.4;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
+}
+.th-hero-content p {
+  font-size: 18px; opacity: 0.95; margin-bottom: 28px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.15);
+}
+.th-hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.th-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: 50px; font-size: 15px; font-weight: 700;
+  transition: all 0.3s; cursor: pointer; border: none;
+}
+.th-btn-white { background: var(--white); color: var(--primary); }
+.th-btn-white:hover { background: var(--yellow-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+.th-btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+.th-btn-outline:hover { background: var(--white); color: var(--primary); transform: translateY(-2px); }
+
+/* ===== SECTION COMMON ===== */
+.th-section { padding: 72px 24px; }
+.th-section-title {
+  text-align: center; margin-bottom: 48px;
+}
+.th-section-title h2 {
+  font-size: 28px; font-weight: 700; color: var(--text);
+  display: inline-block; position: relative; padding-bottom: 12px;
+}
+.th-section-title h2::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 48px; height: 3px; background: var(--primary); border-radius: 2px;
+}
+.th-section-title p { color: var(--text-light); margin-top: 12px; font-size: 15px; }
+.th-container { max-width: var(--max-w); margin: 0 auto; }
+
+/* ===== ABOUT ===== */
+.th-about-bg { background: var(--cream); }
+.th-about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.th-about-img { border-radius: var(--radius); overflow: hidden; box-shadow: 0 8px 32px var(--shadow); }
+.th-about-img img { width: 100%; height: 360px; object-fit: cover; }
+.th-about-text h3 { font-size: 22px; color: var(--primary); margin-bottom: 16px; }
+.th-about-text p { margin-bottom: 16px; font-size: 15px; line-height: 2; }
+.th-about-staff {
+  display: flex; gap: 20px; margin-top: 24px; padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.th-staff-card {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--white); padding: 12px 16px; border-radius: 8px;
+  flex: 1;
+}
+.th-staff-card i { font-size: 28px; color: var(--primary); }
+.th-staff-card .name { font-weight: 700; font-size: 14px; }
+.th-staff-card .role { font-size: 12px; color: var(--text-light); }
+
+/* ===== PRODUCTS ===== */
+.th-products-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.th-product-card {
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow); cursor: pointer;
+  transition: all 0.3s; border: 2px solid transparent;
+}
+.th-product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(45,32,23,0.12); }
+.th-product-card.active { border-color: var(--primary); }
+.th-product-card .card-img {
+  height: 160px; overflow: hidden;
+}
+.th-product-card .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.th-product-card:hover .card-img img { transform: scale(1.05); }
+.th-product-card .card-body { padding: 16px; text-align: center; }
+.th-product-card .card-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.th-product-card .card-body p { font-size: 12px; color: var(--text-light); }
+.th-product-card .card-toggle {
+  font-size: 11px; color: var(--primary); margin-top: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+}
+.th-product-card .card-toggle i { transition: transform 0.3s; }
+.th-product-card.active .card-toggle i { transform: rotate(180deg); }
+
+.th-product-detail {
+  display: none; grid-column: 1 / -1;
+  background: var(--cream); border-radius: var(--radius);
+  padding: 32px; border-left: 4px solid var(--primary);
+  animation: fadeSlide 0.3s ease;
+}
+.th-product-detail.show { display: block; }
+.th-product-detail h4 { font-size: 18px; color: var(--primary); margin-bottom: 12px; }
+.th-product-detail p { font-size: 14px; line-height: 2; }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== FEATURES ===== */
+.th-features-bg { background: linear-gradient(135deg, var(--primary), var(--orange)); }
+.th-features-bg .th-section-title h2 { color: var(--white); }
+.th-features-bg .th-section-title h2::after { background: var(--yellow); }
+.th-features-bg .th-section-title p { color: rgba(255,255,255,0.85); }
+.th-features-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.th-feature-card {
+  background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);
+  border-radius: var(--radius); padding: 32px 20px; text-align: center;
+  color: var(--white); border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s;
+}
+.th-feature-card:hover { background: rgba(255,255,255,0.25); transform: translateY(-4px); }
+.th-feature-card i { font-size: 36px; margin-bottom: 16px; color: var(--yellow); }
+.th-feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.th-feature-card p { font-size: 13px; opacity: 0.9; line-height: 1.7; }
+
+/* ===== SHOP INFO ===== */
+.th-shop-bg { background: var(--cream); }
+.th-shop-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+}
+.th-shop-card {
+  background: var(--white); border-radius: var(--radius); padding: 32px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+.th-shop-card h3 {
+  font-size: 20px; color: var(--primary); margin-bottom: 20px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--primary);
+}
+.th-shop-info { display: flex; flex-direction: column; gap: 12px; }
+.th-shop-info .info-row { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; }
+.th-shop-info .info-row i { color: var(--primary); width: 20px; text-align: center; margin-top: 4px; }
+.th-shop-info .info-row strong { min-width: 60px; }
+.th-map-container {
+  grid-column: 1 / -1; border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+.th-map-container iframe { width: 100%; height: 360px; border: none; }
+.th-access {
+  grid-column: 1 / -1; background: var(--white); border-radius: var(--radius);
+  padding: 32px; box-shadow: 0 4px 20px var(--shadow);
+}
+.th-access h3 { font-size: 18px; color: var(--primary); margin-bottom: 20px; }
+.th-access-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.th-access-item { display: flex; gap: 12px; align-items: flex-start; }
+.th-access-item i { font-size: 24px; color: var(--orange); margin-top: 2px; }
+.th-access-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.th-access-item p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+/* ===== EC LINKS ===== */
+.th-ec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.th-ec-card {
+  background: var(--white); border-radius: var(--radius); padding: 40px 32px;
+  text-align: center; box-shadow: 0 4px 20px var(--shadow);
+  border: 2px solid var(--border); transition: all 0.3s;
+}
+.th-ec-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+.th-ec-card i { font-size: 48px; color: var(--primary); margin-bottom: 16px; }
+.th-ec-card h3 { font-size: 20px; margin-bottom: 8px; }
+.th-ec-card p { font-size: 14px; color: var(--text-light); margin-bottom: 20px; }
+.th-ec-card .th-btn { font-size: 14px; padding: 12px 28px; }
+.th-btn-primary { background: var(--primary); color: var(--white); }
+.th-btn-primary:hover { background: var(--primary-dark); }
+
+/* ===== FAQ ===== */
+.th-faq-bg { background: var(--cream); }
+.th-faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.th-faq-item {
+  background: var(--white); border-radius: var(--radius);
+  box-shadow: 0 2px 12px var(--shadow); overflow: hidden;
+}
+.th-faq-q {
+  padding: 20px 24px; cursor: pointer; display: flex; align-items: center; gap: 16px;
+  font-weight: 700; font-size: 15px; transition: background 0.2s;
+}
+.th-faq-q:hover { background: var(--yellow-light); }
+.th-faq-q .q-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--primary); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; flex-shrink: 0;
+}
+.th-faq-q .arrow { margin-left: auto; color: var(--primary); transition: transform 0.3s; }
+.th-faq-item.open .th-faq-q .arrow { transform: rotate(180deg); }
+.th-faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+}
+.th-faq-a-inner {
+  padding: 0 24px 20px 72px; font-size: 14px; line-height: 2; color: var(--text-light);
+}
+.th-faq-bot-hint {
+  text-align: center; margin-top: 32px; padding: 20px;
+  background: var(--white); border-radius: var(--radius);
+  border: 2px dashed var(--primary);
+}
+.th-faq-bot-hint i { font-size: 28px; color: var(--primary); margin-bottom: 8px; }
+.th-faq-bot-hint p { font-size: 14px; }
+.th-faq-bot-hint strong { color: var(--primary); }
+
+/* ===== SNS ===== */
+.th-sns-grid {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px;
+}
+.th-sns-btn {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; color: var(--white); transition: all 0.3s;
+}
+.th-sns-btn:hover { transform: translateY(-4px) scale(1.1); }
+.th-sns-btn.fb { background: #1877F2; }
+.th-sns-btn.tw { background: #000000; }
+.th-sns-btn.yt { background: #FF0000; }
+.th-sns-btn.line { background: #06C755; }
+.th-sns-btn.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.th-video-embed {
+  max-width: 640px; margin: 0 auto;
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow);
+}
+
+/* ===== CONTACT ===== */
+.th-contact-bg { background: var(--cream); }
+.th-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.th-contact-card {
+  background: var(--white); border-radius: var(--radius); padding: 40px 32px;
+  text-align: center; box-shadow: 0 4px 20px var(--shadow);
+}
+.th-contact-card i { font-size: 40px; color: var(--primary); margin-bottom: 16px; }
+.th-contact-card h3 { font-size: 18px; margin-bottom: 8px; }
+.th-contact-card p { font-size: 14px; color: var(--text-light); margin-bottom: 20px; }
+.th-contact-card .phone-num {
+  font-size: 28px; font-weight: 700; color: var(--primary);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.th-contact-card .phone-sub { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+/* ===== RECRUIT ===== */
+.th-recruit-bg { background: linear-gradient(135deg, var(--orange), var(--primary)); }
+.th-recruit-bg .th-section-title h2 { color: var(--white); }
+.th-recruit-bg .th-section-title h2::after { background: var(--yellow); }
+.th-recruit-content {
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(4px);
+  border-radius: var(--radius); padding: 40px;
+  color: var(--white); border: 1px solid rgba(255,255,255,0.2);
+  max-width: 800px; margin: 0 auto;
+}
+.th-recruit-content h3 { font-size: 20px; margin-bottom: 20px; color: var(--yellow); }
+.th-recruit-table { width: 100%; border-collapse: collapse; }
+.th-recruit-table th, .th-recruit-table td {
+  padding: 12px 16px; text-align: left; font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.th-recruit-table th { font-weight: 700; width: 120px; color: var(--yellow); vertical-align: top; }
+.th-recruit-content .th-btn { margin-top: 24px; }
+
+/* ===== FOOTER ===== */
+.th-footer {
+  background: var(--text); color: rgba(255,255,255,0.8); padding: 48px 24px 24px;
+}
+.th-footer-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;
+}
+.th-footer-col h4 {
+  color: var(--white); font-size: 15px; margin-bottom: 16px;
+  padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.th-footer-col p, .th-footer-col a { font-size: 13px; line-height: 2; }
+.th-footer-col a:hover { color: var(--yellow); }
+.th-footer-col .footer-links { display: flex; flex-direction: column; gap: 4px; }
+.th-footer-col .footer-sns { display: flex; gap: 16px; margin-top: 12px; }
+.th-footer-col .footer-sns a { font-size: 20px; }
+.th-footer-col .footer-sns a:hover { color: var(--yellow); }
+.th-footer-bottom {
+  max-width: var(--max-w); margin: 32px auto 0;
+  padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center; font-size: 12px; color: rgba(255,255,255,0.5);
+}
+
+/* ===== DOCSBOT PLACEHOLDER ===== */
+.th-bot-toggle {
+  position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--primary); color: var(--white);
+  border: none; cursor: pointer; font-size: 28px;
+  box-shadow: 0 4px 20px rgba(232,66,30,0.4);
+  transition: all 0.3s; display: flex; align-items: center; justify-content: center;
+}
+.th-bot-toggle:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(232,66,30,0.5); }
+.th-bot-toggle .badge {
+  position: absolute; top: -4px; right: -4px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--yellow); color: var(--text);
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.th-bot-window {
+  position: fixed; bottom: 100px; right: 24px; z-index: 9998;
+  width: 380px; height: 520px;
+  background: var(--white); border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+  display: none; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--border);
+}
+.th-bot-window.open { display: flex; }
+.th-bot-header {
+  background: var(--primary); color: var(--white); padding: 16px 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.th-bot-header .bot-avatar {
+  width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+.th-bot-header .bot-info h4 { font-size: 14px; font-weight: 700; }
+.th-bot-header .bot-info p { font-size: 11px; opacity: 0.8; }
+.th-bot-header .close-bot {
+  margin-left: auto; background: none; border: none; color: var(--white);
+  font-size: 20px; cursor: pointer; opacity: 0.8;
+}
+.th-bot-header .close-bot:hover { opacity: 1; }
+.th-bot-body {
+  flex: 1; padding: 20px; overflow-y: auto;
+  background: #F8F5F1;
+}
+.th-bot-msg {
+  background: var(--white); border-radius: 12px 12px 12px 4px;
+  padding: 14px 18px; font-size: 14px; line-height: 1.7;
+  box-shadow: 0 2px 8px var(--shadow); margin-bottom: 12px;
+  max-width: 90%;
+}
+.th-bot-msg strong { color: var(--primary); }
+.th-bot-quick-btns { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.th-bot-quick-btn {
+  background: var(--white); border: 1px solid var(--primary); color: var(--primary);
+  border-radius: 20px; padding: 8px 16px; font-size: 13px; cursor: pointer;
+  text-align: left; transition: all 0.2s;
+}
+.th-bot-quick-btn:hover { background: var(--primary); color: var(--white); }
+.th-bot-input {
+  display: flex; gap: 8px; padding: 12px 16px;
+  border-top: 1px solid var(--border); background: var(--white);
+}
+.th-bot-input input {
+  flex: 1; border: 1px solid var(--border); border-radius: 20px;
+  padding: 10px 16px; font-size: 14px; font-family: var(--font-main);
+  outline: none;
+}
+.th-bot-input input:focus { border-color: var(--primary); }
+.th-bot-input button {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--primary); color: var(--white); border: none;
+  cursor: pointer; font-size: 16px; transition: background 0.2s;
+}
+.th-bot-input button:hover { background: var(--primary-dark); }
+
+/* ===== SCROLL REVEAL ===== */
+.th-reveal { opacity: 0; transform: translateY(24px); transition: all 0.6s ease; }
+.th-reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .th-nav { display: none; }
+  .th-hamburger { display: block; }
+  .th-hero { height: 440px; }
+  .th-hero-content h1 { font-size: 28px; }
+  .th-hero-content p { font-size: 15px; }
+  .th-section { padding: 48px 16px; }
+  .th-section-title h2 { font-size: 22px; }
+  .th-about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .th-about-staff { flex-direction: column; }
+  .th-products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .th-product-card .card-img { height: 120px; }
+  .th-features-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .th-feature-card { padding: 24px 16px; }
+  .th-shop-grid { grid-template-columns: 1fr; }
+  .th-access-grid { grid-template-columns: 1fr; }
+  .th-ec-grid { grid-template-columns: 1fr; }
+  .th-contact-grid { grid-template-columns: 1fr; }
+  .th-footer-inner { grid-template-columns: 1fr; gap: 24px; }
+  .th-bot-window { width: calc(100vw - 32px); right: 16px; bottom: 96px; height: 440px; }
+  .th-recruit-content { padding: 24px; }
+  .th-recruit-table th { width: 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="th-header">
+  <div class="th-header-inner">
+    <a href="#" class="th-logo"><img src="images/home-logo_54Y.png" alt="東宝堂"></a>
+    <nav class="th-nav">
+      <a href="#about">東宝堂について</a>
+      <a href="#products">商品紹介</a>
+      <a href="#shop">店舗案内</a>
+      <a href="#ec">通販</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <button class="th-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="th-mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMenu()">東宝堂について</a>
+  <a href="#products" onclick="closeMenu()">商品紹介</a>
+  <a href="#shop" onclick="closeMenu()">店舗案内</a>
+  <a href="#ec" onclick="closeMenu()">通販</a>
+  <a href="#faq" onclick="closeMenu()">よくある質問</a>
+  <a href="#contact" onclick="closeMenu()">お問い合わせ</a>
+  <a href="#recruit" onclick="closeMenu()">求人情報</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="th-hero">
+  <div class="th-hero-bg"></div>
+  <div class="th-hero-overlay"></div>
+  <div class="th-hero-content">
+    <h1>愛されて半世紀。<br>国際通りの沖縄みやげ</h1>
+    <p>創業1969年。沖縄のお土産なら東宝堂へ。</p>
+    <div class="th-hero-btns">
+      <a href="#products" class="th-btn th-btn-white"><i class="fas fa-gift"></i> 商品を見る</a>
+      <a href="#shop" class="th-btn th-btn-outline"><i class="fas fa-map-marker-alt"></i> 店舗案内</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="th-section th-about-bg" id="about">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>東宝堂について</h2>
+      <p>めんそーれ！国際通り松尾交差点のお土産屋です</p>
+    </div>
+    <div class="th-about-grid">
+      <div class="th-about-img th-reveal">
+        <img src="images/home-Pob-photo01.jpg" alt="東宝堂店舗">
+      </div>
+      <div class="th-about-text th-reveal">
+        <h3>良いものをより安く</h3>
+        <p>東宝堂は沖縄・那覇の国際通り沿い、松尾交差点近くにあるお土産屋です。1969年（昭和44年）の創業以来、半世紀以上にわたり地元の方や観光客の皆さまに愛されてきました。</p>
+        <p>ちんすこう、紅芋タルト、サーターアンダギーなどのお菓子から、沖縄そば、シーサー、琉球ガラス、Tシャツ、沖縄コスメ、泡盛まで、売れ筋のお土産ならほぼなんでも揃います。</p>
+        <p>店頭ではほとんどの商品を割引価格で販売。お買い上げ商品は全国発送も承ります。</p>
+        <div class="th-about-staff">
+          <div class="th-staff-card">
+            <i class="fas fa-user-tie"></i>
+            <div>
+              <div class="name">島袋 学</div>
+              <div class="role">店主・沖縄生まれ育ち</div>
+            </div>
+          </div>
+          <div class="th-staff-card">
+            <i class="fas fa-user"></i>
+            <div>
+              <div class="name">島袋 美奈子</div>
+              <div class="role">SNS・通販担当</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="th-section" id="products">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>商品紹介</h2>
+      <p>沖縄の売れ筋お土産がなんでも揃います</p>
+    </div>
+    <div class="th-products-grid th-reveal" id="productsGrid">
+
+      <div class="th-product-card" data-detail="detail-sweets">
+        <div class="card-img"><img src="images/home-selected-photo_01.jpg" alt="お菓子"></div>
+        <div class="card-body">
+          <h3>お菓子</h3>
+          <p>ちんすこう・紅芋タルト</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-card" data-detail="detail-food">
+        <div class="card-img"><img src="images/home-selected-photo_02.jpg" alt="食品"></div>
+        <div class="card-body">
+          <h3>食品</h3>
+          <p>沖縄そば・もずく・SPAM</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-card" data-detail="detail-seasoning">
+        <div class="card-img"><img src="images/home-selected-photo_03.jpg" alt="調味料"></div>
+        <div class="card-body">
+          <h3>調味料</h3>
+          <p>塩・黒糖・コーレーグース</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-card" data-detail="detail-shisa">
+        <div class="card-img"><img src="images/home-selected-photo_04.jpg" alt="シーサー"></div>
+        <div class="card-body">
+          <h3>シーサー・石敢當</h3>
+          <p>魔除け・守護のシンボル</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-detail" id="detail-sweets">
+        <h4><i class="fas fa-cookie-bite"></i> お菓子</h4>
+        <p>沖縄土産の定番、ちんすこうや紅芋タルト、サーターアンダギーなど豊富に取り揃えています。新垣菓子店、名嘉真製菓本舗、南風堂など複数メーカーの商品を扱っており、味の食べ比べもお楽しみいただけます。箱入りのセット商品からバラ売りまで、お土産の数量やご予算に合わせてお選びいただけます。</p>
+      </div>
+      <div class="th-product-detail" id="detail-food">
+        <h4><i class="fas fa-utensils"></i> 食品</h4>
+        <p>沖縄そば、もずく、アンダンスー（油みそ）、SPAM缶詰など、沖縄の食卓を彩る食品が勢揃い。赤マルソウのアンダンスーは地元でも大人気の定番商品です。ご自宅用にもお土産にも喜ばれる商品を多数ご用意しています。</p>
+      </div>
+      <div class="th-product-detail" id="detail-seasoning">
+        <h4><i class="fas fa-pepper-hot"></i> 調味料</h4>
+        <p>沖縄の塩（ぬちまーす、雪塩など）、黒糖、コーレーグース（島唐辛子の泡盛漬け）など、沖縄ならではの調味料をお求めいただけます。料理好きな方へのお土産にぴったりです。</p>
+      </div>
+      <div class="th-product-detail" id="detail-shisa">
+        <h4><i class="fas fa-dragon"></i> シーサー・石敢當</h4>
+        <p>中城窯・朝日陶器製のシーサーを中心に取り揃えています。シーサーは沖縄の伝統的な魔除け・守護のシンボルで、門や玄関に飾るのが習わしです。手のひらサイズの小さなものから本格的な焼き物まで、様々なサイズ・デザインをご用意しています。</p>
+      </div>
+
+      <div class="th-product-card" data-detail="detail-glass">
+        <div class="card-img"><img src="images/home-selected-photo_05.jpg" alt="琉球ガラス"></div>
+        <div class="card-body">
+          <h3>琉球ガラス</h3>
+          <p>100%ハンドメイド</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-card" data-detail="detail-tshirt">
+        <div class="card-img"><img src="images/home-selected-photo_06.jpg" alt="Tシャツ"></div>
+        <div class="card-body">
+          <h3>Tシャツ・帽子</h3>
+          <p>SPAM坊や・オリオン</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-card" data-detail="detail-cosme">
+        <div class="card-img"><img src="images/home-selected-photo_07.jpg" alt="沖縄コスメ"></div>
+        <div class="card-body">
+          <h3>沖縄コスメ</h3>
+          <p>自然素材のスキンケア</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-card" data-detail="detail-awamori">
+        <div class="card-img"><img src="images/home-selected-photo_08.jpg" alt="泡盛"></div>
+        <div class="card-body">
+          <h3>泡盛・オリオンビール</h3>
+          <p>沖縄の地酒</p>
+          <div class="card-toggle"><span>詳しく見る</span> <i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <div class="th-product-detail" id="detail-glass">
+        <h4><i class="fas fa-wine-glass"></i> 琉球ガラス</h4>
+        <p>琉球ガラス村（糸満・名護工房）製の100%ハンドメイドガラス製品を取り扱っています。一つひとつ職人の手で吹き上げた美しいグラスやお皿は、沖縄の海や空を思わせる鮮やかな色合いが特徴。贈り物にも最適です。</p>
+      </div>
+      <div class="th-product-detail" id="detail-tshirt">
+        <h4><i class="fas fa-tshirt"></i> Tシャツ・帽子</h4>
+        <p>国際通りでトップクラスの品揃えを誇るTシャツコーナー。SPAM坊や、オリオンビール、ブルーシールなど沖縄ならではのデザインが豊富。サイズもキッズから大人用まで幅広くご用意。新作のSPAM坊や色付きTシャツも好評です。帽子もオリオンビールデザインなど多数。</p>
+      </div>
+      <div class="th-product-detail" id="detail-cosme">
+        <h4><i class="fas fa-spa"></i> 沖縄コスメ</h4>
+        <p>沖縄の自然素材を活かしたスキンケア・コスメ商品をご用意しています。ハイビスカスやシークヮーサー、海ぶどうなど沖縄ならではの原料を使った化粧品は、ご自分用にもお土産にもおすすめです。</p>
+      </div>
+      <div class="th-product-detail" id="detail-awamori">
+        <h4><i class="fas fa-glass-whiskey"></i> 泡盛・オリオンビール</h4>
+        <p>沖縄を代表するお酒・泡盛と、地ビール・オリオンビールを取り揃えています。泡盛は古酒（クースー）から新酒まで各蔵元の銘柄をご用意。オンライン通販でもお買い求めいただけます。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="th-section th-features-bg" id="features">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>東宝堂の特徴</h2>
+      <p>お客様に喜んでいただくために</p>
+    </div>
+    <div class="th-features-grid th-reveal">
+      <div class="th-feature-card">
+        <i class="fas fa-tags"></i>
+        <h3>ほぼ全品割引</h3>
+        <p>店頭のほとんどの商品を定価より割引価格で販売しています</p>
+      </div>
+      <div class="th-feature-card">
+        <i class="fas fa-credit-card"></i>
+        <h3>キャッシュレス対応</h3>
+        <p>クレジットカード、PayPay、楽天Edy等のQRコード・電子マネー対応</p>
+      </div>
+      <div class="th-feature-card">
+        <i class="fas fa-truck"></i>
+        <h3>全国発送OK</h3>
+        <p>佐川急便・クロネコヤマトで全国どこへでもお届けします</p>
+      </div>
+      <div class="th-feature-card">
+        <i class="fas fa-gift"></i>
+        <h3>ラッピング対応</h3>
+        <p>お中元・お歳暮のギフト用ラッピングも承ります（事前予約制）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOP INFO ===== -->
+<section class="th-section th-shop-bg" id="shop">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>店舗案内</h2>
+      <p>国際通りのほぼ真ん中にあります</p>
+    </div>
+    <div class="th-shop-grid th-reveal">
+      <div class="th-shop-card">
+        <h3><i class="fas fa-store"></i> 東宝堂 本店</h3>
+        <div class="th-shop-info">
+          <div class="info-row"><i class="fas fa-map-marker-alt"></i><div><strong>住所</strong><br>〒900-0014<br>沖縄県那覇市松尾2丁目1-9</div></div>
+          <div class="info-row"><i class="fas fa-phone"></i><div><strong>電話</strong><br>098-863-1289</div></div>
+          <div class="info-row"><i class="fas fa-clock"></i><div><strong>営業</strong><br>9:00〜22:00（年中無休）</div></div>
+        </div>
+      </div>
+      <div class="th-shop-card">
+        <h3><i class="fas fa-store"></i> 東宝堂 2号店</h3>
+        <div class="th-shop-info">
+          <div class="info-row"><i class="fas fa-map-marker-alt"></i><div><strong>住所</strong><br>〒900-0014<br>沖縄県那覇市松尾2丁目（本店すぐ隣）</div></div>
+          <div class="info-row"><i class="fas fa-phone"></i><div><strong>電話</strong><br>098-863-1289</div></div>
+          <div class="info-row"><i class="fas fa-clock"></i><div><strong>営業</strong><br>9:00〜22:00（年中無休）</div></div>
+        </div>
+      </div>
+
+      <div class="th-map-container th-reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d895.5!2d127.68474900157366!3d26.21520328283946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5697b5e9d9d8b%3A0x1234567890abcdef!2z5p2x5a6d5aCC!5e0!3m2!1sja!2sjp!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <div class="th-access th-reveal">
+        <h3><i class="fas fa-route"></i> アクセス方法（那覇空港から）</h3>
+        <div class="th-access-grid">
+          <div class="th-access-item">
+            <i class="fas fa-train"></i>
+            <div>
+              <h4>モノレール</h4>
+              <p>県庁前駅から徒歩約7分<br>料金 270円</p>
+            </div>
+          </div>
+          <div class="th-access-item">
+            <i class="fas fa-bus"></i>
+            <div>
+              <h4>バス</h4>
+              <p>125番or120番乗車<br>松尾バス停下車（240円）</p>
+            </div>
+          </div>
+          <div class="th-access-item">
+            <i class="fas fa-taxi"></i>
+            <div>
+              <h4>タクシー</h4>
+              <p>空港から約15分<br>料金 1,500〜2,000円</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EC LINKS ===== -->
+<section class="th-section" id="ec">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>オンラインでも買えます</h2>
+      <p>自宅にいながら沖縄のお土産をお取り寄せ</p>
+    </div>
+    <div class="th-ec-grid th-reveal">
+      <div class="th-ec-card">
+        <i class="fas fa-shopping-bag"></i>
+        <h3>お菓子・食品・雑貨</h3>
+        <p>ちんすこう、紅芋タルト、シーサー、Tシャツなど<br>お酒以外のお土産はこちら</p>
+        <a href="https://kokusaidori.shop/" target="_blank" class="th-btn th-btn-primary"><i class="fas fa-external-link-alt"></i> 通販サイトへ</a>
+      </div>
+      <div class="th-ec-card">
+        <i class="fas fa-wine-bottle"></i>
+        <h3>泡盛・お酒</h3>
+        <p>泡盛の古酒から新酒まで各蔵元の銘柄を<br>オンラインでお買い求めいただけます</p>
+        <a href="https://touhoudou.base.shop/" target="_blank" class="th-btn th-btn-primary"><i class="fas fa-external-link-alt"></i> 通販サイトへ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="th-section th-faq-bg" id="faq">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>よくある質問</h2>
+      <p>お客様からよくいただくご質問にお答えします</p>
+    </div>
+    <div class="th-faq-list th-reveal">
+
+      <div class="th-faq-item">
+        <div class="th-faq-q" onclick="toggleFaq(this)">
+          <span class="q-icon">Q</span>
+          <span>カードやQRコード決済、電子マネーは使えますか？</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="th-faq-a">
+          <div class="th-faq-a-inner">各種クレジットカード、QRコード決済（PayPay等）、電子マネー（楽天Edy等）がご利用いただけます。ただし、チャージには対応しておりません。</div>
+        </div>
+      </div>
+
+      <div class="th-faq-item">
+        <div class="th-faq-q" onclick="toggleFaq(this)">
+          <span class="q-icon">Q</span>
+          <span>お店で買ったものを配送できますか？</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="th-faq-a">
+          <div class="th-faq-a-inner">はい、全国発送に対応しています。佐川急便またはクロネコヤマトからお選びいただけます。手ぶらで帰れますので、お気軽に店頭でご相談ください。</div>
+        </div>
+      </div>
+
+      <div class="th-faq-item">
+        <div class="th-faq-q" onclick="toggleFaq(this)">
+          <span class="q-icon">Q</span>
+          <span>ラッピングはやっていますか？</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="th-faq-a">
+          <div class="th-faq-a-inner">通販でのご注文は対応可能です。お中元・お歳暮時期は、2週間以上前（10個以上の場合は3週間前）にご連絡いただければラッピングも承ります。LINE、Instagram、Facebookメッセンジャーからお問い合わせください。</div>
+        </div>
+      </div>
+
+      <div class="th-faq-item">
+        <div class="th-faq-q" onclick="toggleFaq(this)">
+          <span class="q-icon">Q</span>
+          <span>駐車場はありますか？</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="th-faq-a">
+          <div class="th-faq-a-inner">専用駐車場はございませんが、近隣に「おおしろパーキング（浮島通り）」や一銀通り沿いのコインパーキングが複数ございます。</div>
+        </div>
+      </div>
+
+      <div class="th-faq-item">
+        <div class="th-faq-q" onclick="toggleFaq(this)">
+          <span class="q-icon">Q</span>
+          <span>営業時間と定休日は？</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="th-faq-a">
+          <div class="th-faq-a-inner">本店・2号店ともに9:00〜22:00、年中無休で営業しております。台風など悪天候時は臨時休業する場合がございます。</div>
+        </div>
+      </div>
+
+      <div class="th-faq-item">
+        <div class="th-faq-q" onclick="toggleFaq(this)">
+          <span class="q-icon">Q</span>
+          <span>通販はやっていますか？</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="th-faq-a">
+          <div class="th-faq-a-inner">はい、2つのオンラインショップをご用意しています。お菓子・食品・雑貨などは <a href="https://kokusaidori.shop/" target="_blank" style="color:var(--primary);text-decoration:underline;">kokusaidori.shop</a>、泡盛・お酒は <a href="https://touhoudou.base.shop/" target="_blank" style="color:var(--primary);text-decoration:underline;">touhoudou.base.shop</a> でお買い求めいただけます。</div>
+        </div>
+      </div>
+
+      <div class="th-faq-bot-hint">
+        <i class="fas fa-robot"></i>
+        <p>その他のご質問は、画面右下の<strong>チャットボット</strong>にお気軽にどうぞ！<br>24時間いつでもお答えします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SNS ===== -->
+<section class="th-section" id="sns">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>SNS・メディア</h2>
+      <p>最新情報をチェック</p>
+    </div>
+    <div class="th-sns-grid th-reveal">
+      <a href="https://www.facebook.com/touhoudo" target="_blank" class="th-sns-btn fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/nahamiiyage" target="_blank" class="th-sns-btn tw"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.youtube.com/channel/UCom7fYB1Fmq868kd6HG2iqA" target="_blank" class="th-sns-btn yt"><i class="fab fa-youtube"></i></a>
+      <a href="https://page.line.me/dfy1310q" target="_blank" class="th-sns-btn line"><i class="fab fa-line"></i></a>
+      <a href="https://www.instagram.com/touhoudou/" target="_blank" class="th-sns-btn ig"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="th-section th-contact-bg" id="contact">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>お問い合わせ</h2>
+      <p>お気軽にご連絡ください</p>
+    </div>
+    <div class="th-contact-grid th-reveal">
+      <div class="th-contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>お電話</h3>
+        <p>営業時間 9:00〜22:00（年中無休）</p>
+        <a href="tel:0988631289" class="phone-num"><i class="fas fa-phone"></i> 098-863-1289</a>
+      </div>
+      <div class="th-contact-card">
+        <i class="fas fa-robot"></i>
+        <h3>AIチャットで質問</h3>
+        <p>商品・配送・営業時間など<br>24時間いつでもお答えします</p>
+        <button class="th-btn th-btn-primary" onclick="openBot()" style="margin-top:4px;"><i class="fas fa-comment-dots"></i> チャットで聞く</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RECRUIT ===== -->
+<section class="th-section th-recruit-bg" id="recruit">
+  <div class="th-container">
+    <div class="th-section-title th-reveal">
+      <h2>スタッフ募集</h2>
+    </div>
+    <div class="th-recruit-content th-reveal">
+      <h3><i class="fas fa-users"></i> 一緒に働きませんか？</h3>
+      <table class="th-recruit-table">
+        <tr><th>職種</th><td>販売・接客スタッフ</td></tr>
+        <tr><th>給与</th><td>時給 1,250円〜（1分単位計算・昇給あり）</td></tr>
+        <tr><th>勤務時間</th><td>9:00〜17:00 または 17:00〜22:00（相談可）</td></tr>
+        <tr><th>シフト</th><td>週3〜6日、自由に選択OK</td></tr>
+        <tr><th>対象</th><td>高校生〜60代まで幅広く歓迎・未経験OK・ノルマなし</td></tr>
+        <tr><th>待遇</th><td>社会保険完備・従業員割引・交通費支給・育児休暇対応</td></tr>
+      </table>
+      <a href="https://s2150-1856.saiyo-kakaricho.com/" target="_blank" class="th-btn th-btn-white"><i class="fas fa-paper-plane"></i> エントリーフォームへ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="th-footer">
+  <div class="th-footer-inner">
+    <div class="th-footer-col">
+      <h4>東宝堂</h4>
+      <p>株式会社HINATA<br>〒900-0014<br>沖縄県那覇市松尾2丁目1-9<br>TEL: 098-863-1289<br>営業: 9:00〜22:00（年中無休）</p>
+    </div>
+    <div class="th-footer-col">
+      <h4>サイトメニュー</h4>
+      <div class="footer-links">
+        <a href="#about">東宝堂について</a>
+        <a href="#products">商品紹介</a>
+        <a href="#shop">店舗案内</a>
+        <a href="#ec">オンラインショップ</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="#recruit">求人情報</a>
+      </div>
+    </div>
+    <div class="th-footer-col">
+      <h4>フォローする</h4>
+      <p>最新情報はSNSでチェック！</p>
+      <div class="footer-sns">
+        <a href="https://www.facebook.com/touhoudo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/nahamiiyage" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCom7fYB1Fmq868kd6HG2iqA" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://page.line.me/dfy1310q" target="_blank"><i class="fab fa-line"></i></a>
+        <a href="https://www.instagram.com/touhoudou/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="th-footer-bottom">
+    &copy; 2026 株式会社HINATA All rights reserved.
+  </div>
+</footer>
+
+<!-- ===== DOCSBOT CHAT ===== -->
+<button class="th-bot-toggle" id="botToggle" onclick="toggleBot()">
+  <i class="fas fa-comment-dots"></i>
+  <span class="badge">!</span>
+</button>
+
+<div class="th-bot-window" id="botWindow">
+  <div class="th-bot-header">
+    <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+    <div class="bot-info">
+      <h4>東宝堂 AIアシスタント</h4>
+      <p>お気軽にご質問ください</p>
+    </div>
+    <button class="close-bot" onclick="toggleBot()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="th-bot-body">
+    <div class="th-bot-msg">
+      めんそーれ！<strong>東宝堂</strong>へようこそ！<br>
+      商品・営業時間・配送などなんでもお気軽にお聞きください。
+    </div>
+    <div class="th-bot-quick-btns">
+      <button class="th-bot-quick-btn" onclick="quickQ(this)"><i class="fas fa-clock"></i> 営業時間を教えて</button>
+      <button class="th-bot-quick-btn" onclick="quickQ(this)"><i class="fas fa-truck"></i> 配送はできますか？</button>
+      <button class="th-bot-quick-btn" onclick="quickQ(this)"><i class="fas fa-credit-card"></i> 使える決済方法は？</button>
+      <button class="th-bot-quick-btn" onclick="quickQ(this)"><i class="fas fa-map-marker-alt"></i> お店への行き方</button>
+    </div>
+  </div>
+  <div class="th-bot-input">
+    <input type="text" placeholder="質問を入力..." id="botInput" onkeypress="if(event.key==='Enter')sendBot()">
+    <button onclick="sendBot()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<!-- ===== DOCSBOT EMBED (後で実コードに置換) ===== -->
+<!--
+  ▼▼▼ DocsBotの埋め込みコード ▼▼▼
+  ここに提供されたDocsBotのscriptタグを貼り付けてください。
+  貼り付け後、上記のプレースホルダーBot（#botToggle, #botWindow）は削除してください。
+  ▼▼▼ DocsBotの埋め込みコード ▼▼▼
+-->
+
+<script>
+// ===== HAMBURGER MENU =====
+function toggleMenu() {
+  document.querySelector('.th-hamburger').classList.toggle('active');
+  document.getElementById('mobileNav').classList.toggle('active');
+}
+function closeMenu() {
+  document.querySelector('.th-hamburger').classList.remove('active');
+  document.getElementById('mobileNav').classList.remove('active');
+}
+
+// ===== PRODUCT CARDS =====
+document.querySelectorAll('.th-product-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const detailId = this.dataset.detail;
+    const detail = document.getElementById(detailId);
+    const grid = document.getElementById('productsGrid');
+    const wasActive = this.classList.contains('active');
+
+    // close all
+    grid.querySelectorAll('.th-product-card').forEach(c => c.classList.remove('active'));
+    grid.querySelectorAll('.th-product-detail').forEach(d => d.classList.remove('show'));
+
+    if (!wasActive && detail) {
+      this.classList.add('active');
+
+      // find last card in same visual row
+      const cards = Array.from(grid.querySelectorAll('.th-product-card'));
+      const thisTop = this.getBoundingClientRect().top;
+      const rowCards = cards.filter(c => Math.abs(c.getBoundingClientRect().top - thisTop) < 10);
+      const lastInRow = rowCards[rowCards.length - 1];
+
+      // insert detail after last card in row
+      lastInRow.insertAdjacentElement('afterend', detail);
+      detail.classList.add('show');
+
+      setTimeout(() => {
+        detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  });
+});
+
+// ===== FAQ =====
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const answer = item.querySelector('.th-faq-a');
+  const isOpen = item.classList.contains('open');
+
+  // close all
+  document.querySelectorAll('.th-faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.th-faq-a').style.maxHeight = null;
+  });
+
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// ===== BOT =====
+function toggleBot() {
+  const w = document.getElementById('botWindow');
+  w.classList.toggle('open');
+  // hide badge on open
+  if (w.classList.contains('open')) {
+    document.querySelector('.th-bot-toggle .badge').style.display = 'none';
+  }
+}
+function openBot() {
+  document.getElementById('botWindow').classList.add('open');
+  document.querySelector('.th-bot-toggle .badge').style.display = 'none';
+}
+function quickQ(btn) {
+  const body = document.querySelector('.th-bot-body');
+  const userMsg = document.createElement('div');
+  userMsg.style.cssText = 'background:var(--primary);color:white;border-radius:12px 12px 4px 12px;padding:12px 16px;font-size:14px;margin-left:auto;max-width:80%;margin-bottom:12px;text-align:right;';
+  userMsg.textContent = btn.textContent.trim();
+  body.appendChild(userMsg);
+
+  // remove quick buttons
+  const qbtns = body.querySelector('.th-bot-quick-btns');
+  if (qbtns) qbtns.remove();
+
+  // placeholder response
+  setTimeout(() => {
+    const botMsg = document.createElement('div');
+    botMsg.className = 'th-bot-msg';
+    botMsg.innerHTML = '<em>DocsBotが接続されると、ここにAIの回答が表示されます。</em>';
+    body.appendChild(botMsg);
+    body.scrollTop = body.scrollHeight;
+  }, 500);
+
+  body.scrollTop = body.scrollHeight;
+}
+function sendBot() {
+  const input = document.getElementById('botInput');
+  if (!input.value.trim()) return;
+  const body = document.querySelector('.th-bot-body');
+
+  const userMsg = document.createElement('div');
+  userMsg.style.cssText = 'background:var(--primary);color:white;border-radius:12px 12px 4px 12px;padding:12px 16px;font-size:14px;margin-left:auto;max-width:80%;margin-bottom:12px;text-align:right;';
+  userMsg.textContent = input.value;
+  body.appendChild(userMsg);
+  input.value = '';
+
+  setTimeout(() => {
+    const botMsg = document.createElement('div');
+    botMsg.className = 'th-bot-msg';
+    botMsg.innerHTML = '<em>DocsBotが接続されると、ここにAIの回答が表示されます。</em>';
+    body.appendChild(botMsg);
+    body.scrollTop = body.scrollHeight;
+  }, 500);
+
+  body.scrollTop = body.scrollHeight;
+}
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.th-reveal').forEach(el => observer.observe(el));
+
+// ===== AUTO OPEN BOT after 3 seconds =====
+setTimeout(() => {
+  const w = document.getElementById('botWindow');
+  if (!w.classList.contains('open')) {
+    w.classList.add('open');
+    document.querySelector('.th-bot-toggle .badge').style.display = 'none';
+  }
+}, 3000);
+</script>
+
+</body>
+</html>
